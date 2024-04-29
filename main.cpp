@@ -1,7 +1,9 @@
 #include "XmlService.h"
-
+#include "JsonService.h"
 int main() 
 {
-	XmlService js;
-	Weather w = js.getWeather("weather.xml");
+	JsonService js;
+	XmlService xml;
+	Weather w1 = js.getWeather("weather.json");
+	Weather w2 = xml.getWeather("weather.xml");
 }
