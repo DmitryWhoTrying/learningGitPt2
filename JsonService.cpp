@@ -13,8 +13,8 @@ Weather JsonService::getWeather(std::string s)
     double lon = j["coord"]["lon"].get<double>();
     double lat = j["coord"]["lat"].get<double>();
     double temperature = j["main"]["temp"].get<double>();
-    std::string weather = j["weather"]["description"].get<std::string>();
-    double windSpeed = j["wing"]["speed"].get<double>();
+    std::string weather = j["weather"][0]["description"].get<std::string>();
+    double windSpeed = j["wind"]["speed"].get<double>();
     int clouds = j["clouds"]["all"]; // 100
     return Weather(city, lon, lat, temperature, weather, windSpeed, clouds);
 }
